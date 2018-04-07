@@ -6,7 +6,7 @@ public class Item{
     private static final String TABLE = "items";
 
     // Database Column Names
-    private static final String _ID = "_ID";
+    private static final String _ID = "_id";
     private static final String ID = "id";
     private static final String NAME = "name";
     private static final String SECTION = "section";
@@ -24,7 +24,8 @@ public class Item{
     private boolean sale;
     private String store;
 
-    private Item(String id, String shoppingTripId, String name, String section, int quantity, double price, boolean sale, String store){
+    private Item(String id, String shoppingTripId, String name, String section,
+                 int quantity, double price, boolean sale, String store){
         this.id = id;
         this.shoppingTripId = shoppingTripId;
         this.name = name;
@@ -114,7 +115,8 @@ public class Item{
         }
 
         public Item build(){
-            return new Item(newId, newShoppingTripId, newName, newSection, newQuantity, newPrice, newSale, newStore);
+            return new Item(newId, newShoppingTripId, newName, newSection,
+                    newQuantity, newPrice, newSale, newStore);
         }
 
     }

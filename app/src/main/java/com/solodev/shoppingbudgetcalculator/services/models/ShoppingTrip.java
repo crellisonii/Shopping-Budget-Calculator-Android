@@ -5,14 +5,27 @@ import java.util.Date;
 
 public class ShoppingTrip{
 
+    // Database Table Name
+    private static final String TABLE = "shopping_trip";
+
+    // Database Column Names
+    private static final String _ID = "_id";
+    private static final String ID = "id";
+    private static final String DATE = "date";
+    private static final String TOTAL = "total";
+    private static final String BUDGET = "budget";
+    private static final String OVER_BUDGET = "over_budget";
+
+
     private String id;
     private Date date;
     private double total;
     private double budget;
     private boolean overBudget;
-    private ArrayList<Item> items;
+    private ArrayList<ItemList> items;
 
-    private ShoppingTrip(String id, Date date, double total, double budget, boolean overBudget, ArrayList<Item> items){
+    private ShoppingTrip(String id, Date date, double total, double budget,
+                         boolean overBudget, ArrayList<ItemList> items){
         this.id = id;
         this.date = date;
         this.total = total;
@@ -41,12 +54,8 @@ public class ShoppingTrip{
         return overBudget;
     }
 
-    public ArrayList<Item> getItems(){
+    public ArrayList<ItemList> getItems(){
         return items;
-    }
-
-    public void setItems(ArrayList<Item> items){
-        this.items = items;
     }
 
     class Builder{
@@ -56,7 +65,7 @@ public class ShoppingTrip{
         private double newTotal = 0.0;
         private double newBudget = 0.0;
         private boolean newOverBudget = false;
-        private ArrayList<Item> newItems = new ArrayList<>();
+        private ArrayList<ItemList> newItems = new ArrayList<>();
 
         public Builder(String id, Date date){
             this.newId = id;
@@ -78,13 +87,14 @@ public class ShoppingTrip{
             return this;
         }
 
-        public Builder items(ArrayList<Item> items){
+        public Builder items(ArrayList<ItemList> items){
             this.newItems = items;
             return this;
         }
 
         public ShoppingTrip build(){
-            return new ShoppingTrip(newId, newDate, newTotal, newBudget, newOverBudget, newItems);
+            return new ShoppingTrip(newId, newDate, newTotal, newBudget,
+                    newOverBudget, newItems);
         }
 
     }
