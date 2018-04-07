@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShoppingListViewActivityFragment"
+    tools:context=".ui.ShoppingListViewFragment"
     tools:showIn="@layout/activity_shopping_list_view">
 
     <TextView
