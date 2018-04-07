@@ -1,4 +1,4 @@
-package com.solodev.shoppingbudgetcalculator.database;
+package com.solodev.shoppingbudgetcalculator.services.database;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;

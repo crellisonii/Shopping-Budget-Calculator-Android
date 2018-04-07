@@ -3,8 +3,8 @@ package com.solodev.shoppingbudgetcalculator.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.solodev.shoppingbudgetcalculator.database.DBManager;
-import com.solodev.shoppingbudgetcalculator.database.Database;
+import com.solodev.shoppingbudgetcalculator.services.database.DBManager;
+import com.solodev.shoppingbudgetcalculator.services.database.Database;
 
 public class App extends Application{
 
