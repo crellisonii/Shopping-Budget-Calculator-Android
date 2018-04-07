@@ -34,40 +34,20 @@ public class ItemList{
         return id;
     }
 
-    public void setId(String id){
-        this.id = id;
-    }
-
     public String getName(){
         return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
     }
 
     public String getSection(){
         return section;
     }
 
-    public void setSection(String section){
-        this.section = section;
-    }
-
     public double getPrice(){
         return price;
     }
 
-    public void setPrice(double price){
-        this.price = price;
-    }
-
     public int getQuantity(){
         return quantity;
-    }
-
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
     }
 
     class Builder{
