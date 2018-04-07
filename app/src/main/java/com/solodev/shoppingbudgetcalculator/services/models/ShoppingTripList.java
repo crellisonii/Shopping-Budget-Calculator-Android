@@ -4,6 +4,16 @@ import java.util.Date;
 
 public class ShoppingTripList{
 
+    // Database Table Name
+    private static final String TABLE = "shopping_trip";
+
+    // Database Column Names
+    private static final String ID = "id";
+    private static final String DATE = "date";
+    private static final String TOTAL = "total";
+    private static final String BUDGET = "budget";
+    private static final String OVER_BUDGET = "over_budget";
+
     private String id;
     private Date date;
     private boolean overBudget;
@@ -20,31 +30,50 @@ public class ShoppingTripList{
         return id;
     }
 
-    public void setId(String id){
-        this.id = id;
-    }
-
     public Date getDate(){
         return date;
-    }
-
-    public void setDate(Date date){
-        this.date = date;
     }
 
     public boolean isOverBudget(){
         return overBudget;
     }
 
-    public void setOverBudget(boolean overBudget){
-        this.overBudget = overBudget;
-    }
-
     public double getAdjustedBudget(){
         return adjustedBudget;
     }
 
-    public void setAdjustedBudget(double adjustedBudget){
-        this.adjustedBudget = adjustedBudget;
+    class Builder{
+
+        private String newId;
+        private Date newDate;
+        private boolean newOverBudget;
+        private double newTotal;
+        private double newBudget;
+
+        public Builder(String id, Date date){
+            this.newId = id;
+            this.newDate = date;
+        }
+
+        public Builder overBudget(boolean overBudget){
+            this.newOverBudget = overBudget;
+            return this;
+        }
+
+        public Builder total(double total){
+            this.newTotal = total;
+            return this;
+        }
+
+        public Builder budget(double budget){
+            this.newBudget = budget;
+            return this;
+        }
+
+        public ShoppingTripList build(){
+            double adjustedBudget = newBudget - newTotal;
+            return new ShoppingTripList(newId, newDate, newOverBudget, adjustedBudget);
+        }
+
     }
 }
