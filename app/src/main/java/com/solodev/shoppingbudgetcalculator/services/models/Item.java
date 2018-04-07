@@ -71,12 +71,12 @@ public class Item{
 
         private String newId;
         private String newShoppingTripId;
-        private String newName;
-        private String newSection;
-        private int newQuantity;
-        private double newPrice;
-        private boolean newSale;
-        private String newStore;
+        private String newName = "";
+        private String newSection = "";
+        private int newQuantity = 0;
+        private double newPrice = 0.0;
+        private boolean newSale = false;
+        private String newStore = "";
 
         public Builder(String id, String shoppingTripId){
             this.newId = id;
