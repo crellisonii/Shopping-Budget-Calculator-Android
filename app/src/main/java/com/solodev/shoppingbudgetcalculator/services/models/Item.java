@@ -2,6 +2,19 @@ package com.solodev.shoppingbudgetcalculator.services.models;
 
 public class Item{
 
+    // Database Table Name
+    private static final String TABLE = "items";
+
+    // Database Column Names
+    private static final String _ID = "_ID";
+    private static final String ID = "id";
+    private static final String NAME = "name";
+    private static final String SECTION = "section";
+    private static final String Quantity = "quantity";
+    private static final String PRICE = "price";
+    private static final String SALE = "sale";
+    private static final String STORE = "store";
+
     private String id;
     private String shoppingTripId;
     private String name;
@@ -84,5 +97,57 @@ public class Item{
 
     public void setStore(String store){
         this.store = store;
+    }
+
+    class Builder{
+
+        private String newId;
+        private String newShoppingTripId;
+        private String newName;
+        private String newSection;
+        private int newQuantity;
+        private double newPrice;
+        private boolean newSale;
+        private String newStore;
+
+        public Builder(String id, String shoppingTripId){
+            this.newId = id;
+            this.newShoppingTripId = shoppingTripId;
+        }
+
+        public Builder name(String name){
+            this.newName = name;
+            return this;
+        }
+
+        public Builder section(String section){
+            this.newSection = section;
+            return this;
+        }
+
+        public Builder quantity(int quantity){
+            this.newQuantity = quantity;
+            return this;
+        }
+
+        public Builder price(double price){
+            this.newPrice = price;
+            return this;
+        }
+
+        public Builder sale(boolean sale){
+            this.newSale = sale;
+            return this;
+        }
+
+        public Builder store(String store){
+            this.newStore = store;
+            return this;
+        }
+
+        public Item build(){
+            return new Item(newId, newShoppingTripId, newName, newSection, newQuantity, newPrice, newSale, newStore);
+        }
+
     }
 }
