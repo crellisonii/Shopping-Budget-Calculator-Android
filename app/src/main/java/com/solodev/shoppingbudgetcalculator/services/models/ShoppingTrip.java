@@ -68,4 +68,45 @@ public class ShoppingTrip{
     public void setItems(ArrayList<Item> items){
         this.items = items;
     }
+
+    class Builder{
+
+        private String newId;
+        private Date newDate;
+        private double newTotal;
+        private double newBudget;
+        private boolean newOverBudget;
+        private ArrayList<Item> newItems;
+
+        public Builder(String id, Date date){
+            this.newId = id;
+            this.newDate = date;
+        }
+
+        public Builder total(double total){
+            this.newTotal = total;
+            return this;
+        }
+
+        public Builder budget(double budget){
+            this.newBudget = budget;
+            return this;
+        }
+
+        public Builder overBudget(boolean overBudget){
+            this.newOverBudget = overBudget;
+            return this;
+        }
+
+        public Builder items(ArrayList<Item> items){
+            this.newItems = items;
+            return this;
+        }
+
+        public ShoppingTrip build(){
+            return new ShoppingTrip(newId, newDate, newTotal, newBudget, newOverBudget, newItems);
+        }
+
+    }
+
 }
