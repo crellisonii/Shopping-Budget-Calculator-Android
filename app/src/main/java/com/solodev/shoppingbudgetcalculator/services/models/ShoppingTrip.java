@@ -53,10 +53,10 @@ public class ShoppingTrip{
 
         private String newId;
         private Date newDate;
-        private double newTotal;
-        private double newBudget;
-        private boolean newOverBudget;
-        private ArrayList<Item> newItems;
+        private double newTotal = 0.0;
+        private double newBudget = 0.0;
+        private boolean newOverBudget = false;
+        private ArrayList<Item> newItems = new ArrayList<>();
 
         public Builder(String id, Date date){
             this.newId = id;

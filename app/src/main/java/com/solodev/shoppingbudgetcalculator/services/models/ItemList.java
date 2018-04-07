@@ -53,10 +53,10 @@ public class ItemList{
     class Builder{
 
         private String newId;
-        private String newName;
-        private String newSection;
-        private double newPrice;
-        private int newQuantity;
+        private String newName = "";
+        private String newSection = "";
+        private double newPrice = 0.0;
+        private int newQuantity = 0;
 
         public Builder(String newId){}
 

@@ -46,9 +46,9 @@ public class ShoppingTripList{
 
         private String newId;
         private Date newDate;
-        private boolean newOverBudget;
-        private double newTotal;
-        private double newBudget;
+        private boolean newOverBudget = false;
+        private double newTotal = 0.0;
+        private double newBudget = 0.0;
 
         public Builder(String id, Date date){
             this.newId = id;
